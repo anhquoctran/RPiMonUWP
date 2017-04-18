@@ -1,1 +1,1 @@
-# Raspberry Pi Monitor System Client App for Universal Windows Platform
+# Raspberry Pi Monitor System  - Client management app for Universal Windows Platform
