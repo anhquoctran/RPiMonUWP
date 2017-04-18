@@ -1,0 +1,12 @@
+﻿<Application
+    x:Class="RPiMonUWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RPiMonUWP"
+    RequestedTheme="Light">
+    <Application.Resources>
+        <SolidColorBrush x:Key="DefaultAccentColor" Color="#FF4A148C" />
+        <SolidColorBrush x:Key="DefaultDarkColorPivot" Color="#1C1F24" />
+
+    </Application.Resources>
+</Application>
