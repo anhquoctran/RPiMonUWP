@@ -15,6 +15,40 @@
           "lib/netcore45/EngineIoClientDotNet.dll": {}
         }
       },
+      "LiveCharts/0.8.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net40+sl5+win8+wp8+wpa81/LiveCharts.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net40+sl5+win8+wp8+wpa81/LiveCharts.dll": {}
+        }
+      },
+      "LiveCharts.Uwp/0.8.0": {
+        "type": "package",
+        "dependencies": {
+          "LiveCharts": "0.8.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "Microsoft.Xaml.Behaviors.Uwp.Managed": "2.0.0"
+        },
+        "compile": {
+          "lib/uap10.0/LiveCharts.Uwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/LiveCharts.Uwp.dll": {}
+        }
+      },
+      "MahApps.Metro.IconPacks.Material/1.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/MahApps.Metro.IconPacks.Core.dll": {},
+          "lib/uap10.0/MahApps.Metro.IconPacks.Material.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/MahApps.Metro.IconPacks.Core.dll": {},
+          "lib/uap10.0/MahApps.Metro.IconPacks.Material.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -295,6 +329,17 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Uwp.Managed/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
+          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
+          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -2427,6 +2472,40 @@
           "lib/netcore45/EngineIoClientDotNet.dll": {}
         }
       },
+      "LiveCharts/0.8.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net40+sl5+win8+wp8+wpa81/LiveCharts.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net40+sl5+win8+wp8+wpa81/LiveCharts.dll": {}
+        }
+      },
+      "LiveCharts.Uwp/0.8.0": {
+        "type": "package",
+        "dependencies": {
+          "LiveCharts": "0.8.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "Microsoft.Xaml.Behaviors.Uwp.Managed": "2.0.0"
+        },
+        "compile": {
+          "lib/uap10.0/LiveCharts.Uwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/LiveCharts.Uwp.dll": {}
+        }
+      },
+      "MahApps.Metro.IconPacks.Material/1.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/MahApps.Metro.IconPacks.Core.dll": {},
+          "lib/uap10.0/MahApps.Metro.IconPacks.Material.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/MahApps.Metro.IconPacks.Core.dll": {},
+          "lib/uap10.0/MahApps.Metro.IconPacks.Material.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2655,6 +2734,17 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Uwp.Managed/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
+          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
+          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -4894,6 +4984,40 @@
           "lib/netcore45/EngineIoClientDotNet.dll": {}
         }
       },
+      "LiveCharts/0.8.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net40+sl5+win8+wp8+wpa81/LiveCharts.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net40+sl5+win8+wp8+wpa81/LiveCharts.dll": {}
+        }
+      },
+      "LiveCharts.Uwp/0.8.0": {
+        "type": "package",
+        "dependencies": {
+          "LiveCharts": "0.8.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "Microsoft.Xaml.Behaviors.Uwp.Managed": "2.0.0"
+        },
+        "compile": {
+          "lib/uap10.0/LiveCharts.Uwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/LiveCharts.Uwp.dll": {}
+        }
+      },
+      "MahApps.Metro.IconPacks.Material/1.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/MahApps.Metro.IconPacks.Core.dll": {},
+          "lib/uap10.0/MahApps.Metro.IconPacks.Material.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/MahApps.Metro.IconPacks.Core.dll": {},
+          "lib/uap10.0/MahApps.Metro.IconPacks.Material.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -5123,6 +5247,17 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Uwp.Managed/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
+          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
+          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -7400,6 +7535,40 @@
           "lib/netcore45/EngineIoClientDotNet.dll": {}
         }
       },
+      "LiveCharts/0.8.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net40+sl5+win8+wp8+wpa81/LiveCharts.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net40+sl5+win8+wp8+wpa81/LiveCharts.dll": {}
+        }
+      },
+      "LiveCharts.Uwp/0.8.0": {
+        "type": "package",
+        "dependencies": {
+          "LiveCharts": "0.8.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "Microsoft.Xaml.Behaviors.Uwp.Managed": "2.0.0"
+        },
+        "compile": {
+          "lib/uap10.0/LiveCharts.Uwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/LiveCharts.Uwp.dll": {}
+        }
+      },
+      "MahApps.Metro.IconPacks.Material/1.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/MahApps.Metro.IconPacks.Core.dll": {},
+          "lib/uap10.0/MahApps.Metro.IconPacks.Material.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/MahApps.Metro.IconPacks.Core.dll": {},
+          "lib/uap10.0/MahApps.Metro.IconPacks.Material.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -7631,6 +7800,17 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Uwp.Managed/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
+          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
+          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -9876,6 +10056,40 @@
           "lib/netcore45/EngineIoClientDotNet.dll": {}
         }
       },
+      "LiveCharts/0.8.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net40+sl5+win8+wp8+wpa81/LiveCharts.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net40+sl5+win8+wp8+wpa81/LiveCharts.dll": {}
+        }
+      },
+      "LiveCharts.Uwp/0.8.0": {
+        "type": "package",
+        "dependencies": {
+          "LiveCharts": "0.8.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "Microsoft.Xaml.Behaviors.Uwp.Managed": "2.0.0"
+        },
+        "compile": {
+          "lib/uap10.0/LiveCharts.Uwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/LiveCharts.Uwp.dll": {}
+        }
+      },
+      "MahApps.Metro.IconPacks.Material/1.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/MahApps.Metro.IconPacks.Core.dll": {},
+          "lib/uap10.0/MahApps.Metro.IconPacks.Material.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/MahApps.Metro.IconPacks.Core.dll": {},
+          "lib/uap10.0/MahApps.Metro.IconPacks.Material.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -10108,6 +10322,17 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Uwp.Managed/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
+          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
+          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -12391,6 +12616,40 @@
           "lib/netcore45/EngineIoClientDotNet.dll": {}
         }
       },
+      "LiveCharts/0.8.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net40+sl5+win8+wp8+wpa81/LiveCharts.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net40+sl5+win8+wp8+wpa81/LiveCharts.dll": {}
+        }
+      },
+      "LiveCharts.Uwp/0.8.0": {
+        "type": "package",
+        "dependencies": {
+          "LiveCharts": "0.8.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "Microsoft.Xaml.Behaviors.Uwp.Managed": "2.0.0"
+        },
+        "compile": {
+          "lib/uap10.0/LiveCharts.Uwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/LiveCharts.Uwp.dll": {}
+        }
+      },
+      "MahApps.Metro.IconPacks.Material/1.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/MahApps.Metro.IconPacks.Core.dll": {},
+          "lib/uap10.0/MahApps.Metro.IconPacks.Material.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/MahApps.Metro.IconPacks.Core.dll": {},
+          "lib/uap10.0/MahApps.Metro.IconPacks.Material.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -12622,6 +12881,17 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Uwp.Managed/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
+          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
+          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -14867,6 +15137,40 @@
           "lib/netcore45/EngineIoClientDotNet.dll": {}
         }
       },
+      "LiveCharts/0.8.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net40+sl5+win8+wp8+wpa81/LiveCharts.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net40+sl5+win8+wp8+wpa81/LiveCharts.dll": {}
+        }
+      },
+      "LiveCharts.Uwp/0.8.0": {
+        "type": "package",
+        "dependencies": {
+          "LiveCharts": "0.8.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "Microsoft.Xaml.Behaviors.Uwp.Managed": "2.0.0"
+        },
+        "compile": {
+          "lib/uap10.0/LiveCharts.Uwp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/LiveCharts.Uwp.dll": {}
+        }
+      },
+      "MahApps.Metro.IconPacks.Material/1.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/MahApps.Metro.IconPacks.Core.dll": {},
+          "lib/uap10.0/MahApps.Metro.IconPacks.Material.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/MahApps.Metro.IconPacks.Core.dll": {},
+          "lib/uap10.0/MahApps.Metro.IconPacks.Material.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -15099,6 +15403,17 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Uwp.Managed/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
+          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.Xaml.Interactions.dll": {},
+          "lib/uap10.0/Microsoft.Xaml.Interactivity.dll": {}
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -17389,6 +17704,69 @@
         "lib/xamarinios10/EngineIoClientDotNet.dll"
       ]
     },
+    "LiveCharts/0.8.0": {
+      "sha512": "Ak+ayWj4jtaiHcXuvOXP+ogjghd44XUr5VB4wzKqS6ACosgj27ymr8jmRXRPxXXaXzwesvdSNXslCWOLFurfuw==",
+      "type": "package",
+      "files": [
+        "LiveCharts.0.8.0.nupkg.sha512",
+        "LiveCharts.nuspec",
+        "lib/net40/LiveCharts.XML",
+        "lib/net40/Livecharts.dll",
+        "lib/net40/Livecharts.pdb",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/LiveCharts.XML",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/LiveCharts.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/LiveCharts.pdb",
+        "readme.txt"
+      ]
+    },
+    "LiveCharts.Uwp/0.8.0": {
+      "sha512": "Jla7J35r8PE5ULjufwM5O5rFNseemAJAdT2plRlkht/U50pNzuux44zZ6iEgHlI8alccSaTkMd0NKmrksBcZpQ==",
+      "type": "package",
+      "files": [
+        "LiveCharts.Uwp.0.8.0.nupkg.sha512",
+        "LiveCharts.Uwp.nuspec",
+        "lib/uap10.0/LiveCharts.Uwp.XML",
+        "lib/uap10.0/LiveCharts.Uwp.dll",
+        "lib/uap10.0/LiveCharts.Uwp.pdb",
+        "lib/uap10.0/LiveCharts.Uwp.pri",
+        "lib/uap10.0/LiveCharts.Uwp/DefaultGeoMapTooltip.xaml",
+        "lib/uap10.0/LiveCharts.Uwp/DefaultLegend.xaml",
+        "lib/uap10.0/LiveCharts.Uwp/DefaultTooltip.xaml",
+        "lib/uap10.0/LiveCharts.Uwp/HeatColorRange.xaml",
+        "lib/uap10.0/LiveCharts.Uwp/LiveCharts.Uwp.xr.xml",
+        "tools/install.ps1"
+      ]
+    },
+    "MahApps.Metro.IconPacks.Material/1.9.0": {
+      "sha512": "agS9FzE9Bp8QLOuY9T8Jphtv/8jZoMl05rZNbQluYHZvY0AvPUIr3iJ0Em940Cyxa7PkowEM7e/bJuDaPMp3IA==",
+      "type": "package",
+      "files": [
+        "MahApps.Metro.IconPacks.Material.1.9.0.nupkg.sha512",
+        "MahApps.Metro.IconPacks.Material.nuspec",
+        "lib/net40/MahApps.Metro.IconPacks.Material.XML",
+        "lib/net40/MahApps.Metro.IconPacks.Material.dll",
+        "lib/net40/MahApps.Metro.IconPacks.Material.pdb",
+        "lib/net45/MahApps.Metro.IconPacks.Material.XML",
+        "lib/net45/MahApps.Metro.IconPacks.Material.dll",
+        "lib/net45/MahApps.Metro.IconPacks.Material.pdb",
+        "lib/net46/MahApps.Metro.IconPacks.Material.XML",
+        "lib/net46/MahApps.Metro.IconPacks.Material.dll",
+        "lib/net46/MahApps.Metro.IconPacks.Material.pdb",
+        "lib/uap10.0/MahApps.Metro.IconPacks.Core.dll",
+        "lib/uap10.0/MahApps.Metro.IconPacks.Core.pdb",
+        "lib/uap10.0/MahApps.Metro.IconPacks.Core.pri",
+        "lib/uap10.0/MahApps.Metro.IconPacks.Core.xml",
+        "lib/uap10.0/MahApps.Metro.IconPacks.Core/Converter/Converters.xaml",
+        "lib/uap10.0/MahApps.Metro.IconPacks.Core/MahApps.Metro.IconPacks.Core.xr.xml",
+        "lib/uap10.0/MahApps.Metro.IconPacks.Material.XML",
+        "lib/uap10.0/MahApps.Metro.IconPacks.Material.dll",
+        "lib/uap10.0/MahApps.Metro.IconPacks.Material.pdb",
+        "lib/uap10.0/MahApps.Metro.IconPacks.Material.pri",
+        "lib/uap10.0/MahApps.Metro.IconPacks.Material/MahApps.Metro.IconPacks.Material.xr.xml",
+        "lib/uap10.0/MahApps.Metro.IconPacks.Material/Themes/Generic.xaml",
+        "lib/uap10.0/MahApps.Metro.IconPacks.Material/Themes/PackIconMaterial.xaml"
+      ]
+    },
     "Microsoft.CSharp/4.3.0": {
       "sha512": "P+MBhIM0YX+JqROuf7i306ZLJEjQYA9uUyRDE+OqwUI5sh41e2ZbPQV3LfAPh+29cmceE1pUffXsGfR4eMY3KA==",
       "type": "package",
@@ -17678,6 +18056,22 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "Microsoft.Xaml.Behaviors.Uwp.Managed/2.0.0": {
+      "sha512": "LfzU68PVP33nqsuSlO5xAYuoI/itVKz4VVJSIunrS7iqqxE3sy0Q+VvtoYnFcBAoGnY83ZVn8Mnc9HYqOBiPmg==",
+      "type": "package",
+      "files": [
+        "Microsoft.Xaml.Behaviors.Uwp.Managed.2.0.0.nupkg.sha512",
+        "Microsoft.Xaml.Behaviors.Uwp.Managed.nuspec",
+        "lib/uap10.0/Design/Microsoft.Xaml.Interactions.Design.dll",
+        "lib/uap10.0/Design/Microsoft.Xaml.Interactivity.Design.dll",
+        "lib/uap10.0/Microsoft.Xaml.Interactions.dll",
+        "lib/uap10.0/Microsoft.Xaml.Interactions.pri",
+        "lib/uap10.0/Microsoft.Xaml.Interactions.xml",
+        "lib/uap10.0/Microsoft.Xaml.Interactivity.dll",
+        "lib/uap10.0/Microsoft.Xaml.Interactivity.pri",
+        "lib/uap10.0/Microsoft.Xaml.Interactivity.xml"
       ]
     },
     "NETStandard.Library/1.6.1": {
@@ -23824,6 +24218,8 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "LiveCharts.Uwp >= 0.8.0",
+      "MahApps.Metro.IconPacks.Material >= 1.9.0",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.2",
       "Newtonsoft.Json >= 10.0.2",
       "SocketIoClientDotNet >= 0.9.13"

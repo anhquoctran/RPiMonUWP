@@ -6,22 +6,90 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:RPiMonUWP"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="page"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Pivot>
-            <PivotItem>
-                <PivotItem.Header>
-                    <controls:PivotHeader Glyph="amp;#xE716;" Label="Home" />
-                </PivotItem.Header>
-                <Grid />
-            </PivotItem>
-            <PivotItem Header="Hardwares">
-                <Grid />
-            </PivotItem>
-            <PivotItem Header="Settings">
-                <Grid />
-            </PivotItem>
-        </Pivot>
-    </Grid>
+    <StackPanel>
+        <Grid Height="40" Background="#FFEEEEF2" />
+        <SplitView
+            Height="600"
+            CompactPaneLength="45"
+            DisplayMode="Inline"
+            OpenPaneLength="230">
+            <SplitView.Pane>
+                <StackPanel Background="{StaticResource DefaultDarkColorPivot}">
+
+                    <RadioButton
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        Content="Trang chủ"
+                        FontSize="14"
+                        Style="{StaticResource MnuItemRadioStyle}"
+                        Tag="&#59407;" />
+                    <RadioButton
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        Content="CPU"
+                        FontSize="14"
+                        Style="{StaticResource MnuItemRadioStyle}"
+                        Tag="&#59407;" />
+                    <RadioButton
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        Content="Bộ nhớ"
+                        FontSize="14"
+                        Style="{StaticResource MnuItemRadioStyle}"
+                        Tag="&#59407;" />
+                    <RadioButton
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        Content="Ổ đĩa"
+                        FontSize="14"
+                        Style="{StaticResource MnuItemRadioStyle}"
+                        Tag="&#59407;" />
+                    <RadioButton
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        Content="Mạng"
+                        FontSize="14"
+                        Style="{StaticResource MnuItemRadioStyle}"
+                        Tag="&#59252;" />
+                    <RadioButton
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        Content="Tiến trình &amp; Dịch vụ"
+                        FontSize="14"
+                        Style="{StaticResource MnuItemRadioStyle}"
+                        Tag="&#59222;" />
+                    <RadioButton
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        Content="Thiết bị ngoại vi"
+                        FontSize="14"
+                        Style="{StaticResource MnuItemRadioStyle}"
+                        Tag="&#xE8FE;" />
+                    <RadioButton
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        Content="Hệ điều hành"
+                        FontSize="14"
+                        Style="{StaticResource MnuItemRadioStyle}"
+                        Tag="&#57828;" />
+                    <RadioButton
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        Content="Người dùng"
+                        FontSize="14"
+                        Style="{StaticResource MnuItemRadioStyle}"
+                        Tag="&#xE716;" />
+                </StackPanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Grid Background="White" />
+            </SplitView.Content>
+        </SplitView>
+    </StackPanel>
+
+
+
 </Page>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="MahApps.Metro.IconPacks.Core" version="1.0" primary="true">
+		<Qualifiers/>
+		<ResourceMapSubtree name="Files">
+			<ResourceMapSubtree name="MahApps.Metro.IconPacks.Core">
+				<NamedResource name="MahApps.Metro.IconPacks.Core.xr.xml" uri="ms-resource://MahApps.Metro.IconPacks.Core/Files/MahApps.Metro.IconPacks.Core/MahApps.Metro.IconPacks.Core.xr.xml">
+					<Candidate type="Path">
+						<Value>MahApps.Metro.IconPacks.Core\MahApps.Metro.IconPacks.Core.xr.xml</Value>
+					</Candidate>
+				</NamedResource>
+				<ResourceMapSubtree name="Converter">
+					<NamedResource name="Converters.xaml" uri="ms-resource://MahApps.Metro.IconPacks.Core/Files/MahApps.Metro.IconPacks.Core/Converter/Converters.xaml">
+						<Candidate type="Path">
+							<Value>MahApps.Metro.IconPacks.Core\Converter\Converters.xaml</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="Converters.xbf" uri="ms-resource://MahApps.Metro.IconPacks.Core/Files/MahApps.Metro.IconPacks.Core/Converter/Converters.xbf">
+						<Candidate type="EmbeddedData">
+							<Base64Value>[Embedded Binary Data]</Base64Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>

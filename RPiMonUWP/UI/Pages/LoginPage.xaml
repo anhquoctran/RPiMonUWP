@@ -33,7 +33,7 @@
                 x:Name="txtUsername"
                 Margin="10,68,10,0"
                 VerticalAlignment="Top"
-                PlaceholderText="Username"
+                PlaceholderText="Enter your username"
                 Text=""
                 TextWrapping="Wrap" />
             <TextBlock
@@ -46,7 +46,7 @@
                 x:Name="txtPassword"
                 Margin="10,130,10,0"
                 VerticalAlignment="Top"
-                PlaceholderText="Password" />
+                PlaceholderText="Enter your password" />
             <CheckBox
                 x:Name="ChkRemember"
                 Margin="10,180,10,0"
@@ -60,6 +60,7 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Top"
                 Background="{StaticResource DefaultAccentColor}"
+                Click="BtnLogin_Click"
                 Content="Đăng nhập" />
             <TextBlock
                 x:Name="TxtForgotLink"

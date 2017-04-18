@@ -28,6 +28,18 @@
     <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\EngineIoClientDotNet\0.9.22\lib\netcore45\EngineIoClientDotNet.dll">
       <PackagePath>EngineIoClientDotNet.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\LiveCharts\0.8.0\lib\portable-net40+sl5+win8+wp8+wpa81\LiveCharts.dll">
+      <PackagePath>LiveCharts.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\LiveCharts.Uwp\0.8.0\lib\uap10.0\LiveCharts.Uwp.dll">
+      <PackagePath>LiveCharts.Uwp.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\MahApps.Metro.IconPacks.Material\1.9.0\lib\uap10.0\MahApps.Metro.IconPacks.Core.dll">
+      <PackagePath>MahApps.Metro.IconPacks.Core.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\MahApps.Metro.IconPacks.Material\1.9.0\lib\uap10.0\MahApps.Metro.IconPacks.Material.dll">
+      <PackagePath>MahApps.Metro.IconPacks.Material.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\Microsoft.CSharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
     </AppxPackagedFile>
@@ -69,6 +81,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\Microsoft.VisualBasic\10.0.1\lib\netcore50\Microsoft.VisualBasic.dll">
       <PackagePath>Microsoft.VisualBasic.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\Microsoft.Xaml.Behaviors.Uwp.Managed\2.0.0\lib\uap10.0\Microsoft.Xaml.Interactions.dll">
+      <PackagePath>Microsoft.Xaml.Interactions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\Microsoft.Xaml.Behaviors.Uwp.Managed\2.0.0\lib\uap10.0\Microsoft.Xaml.Interactivity.dll">
+      <PackagePath>Microsoft.Xaml.Interactivity.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\Newtonsoft.Json\10.0.2\lib\netstandard1.3\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -429,6 +447,36 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\LiveCharts.Uwp\0.8.0\lib\uap10.0\LiveCharts.Uwp\DefaultGeoMapTooltip.xaml">
+      <PackagePath>LiveCharts.Uwp\DefaultGeoMapTooltip.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\LiveCharts.Uwp\0.8.0\lib\uap10.0\LiveCharts.Uwp\DefaultLegend.xaml">
+      <PackagePath>LiveCharts.Uwp\DefaultLegend.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\LiveCharts.Uwp\0.8.0\lib\uap10.0\LiveCharts.Uwp\DefaultTooltip.xaml">
+      <PackagePath>LiveCharts.Uwp\DefaultTooltip.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\LiveCharts.Uwp\0.8.0\lib\uap10.0\LiveCharts.Uwp\HeatColorRange.xaml">
+      <PackagePath>LiveCharts.Uwp\HeatColorRange.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\LiveCharts.Uwp\0.8.0\lib\uap10.0\LiveCharts.Uwp\LiveCharts.Uwp.xr.xml">
+      <PackagePath>LiveCharts.Uwp\LiveCharts.Uwp.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\MahApps.Metro.IconPacks.Material\1.9.0\lib\uap10.0\MahApps.Metro.IconPacks.Core\MahApps.Metro.IconPacks.Core.xr.xml">
+      <PackagePath>MahApps.Metro.IconPacks.Core\MahApps.Metro.IconPacks.Core.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\MahApps.Metro.IconPacks.Material\1.9.0\lib\uap10.0\MahApps.Metro.IconPacks.Core\Converter\Converters.xaml">
+      <PackagePath>MahApps.Metro.IconPacks.Core\Converter\Converters.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\MahApps.Metro.IconPacks.Material\1.9.0\lib\uap10.0\MahApps.Metro.IconPacks.Material\MahApps.Metro.IconPacks.Material.xr.xml">
+      <PackagePath>MahApps.Metro.IconPacks.Material\MahApps.Metro.IconPacks.Material.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\MahApps.Metro.IconPacks.Material\1.9.0\lib\uap10.0\MahApps.Metro.IconPacks.Material\Themes\Generic.xaml">
+      <PackagePath>MahApps.Metro.IconPacks.Material\Themes\Generic.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\aquoc\.nuget\packages\MahApps.Metro.IconPacks.Material\1.9.0\lib\uap10.0\MahApps.Metro.IconPacks.Material\Themes\PackIconMaterial.xaml">
+      <PackagePath>MahApps.Metro.IconPacks.Material\Themes\PackIconMaterial.xaml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Csharp\RPiMonUWP\RPiMonUWP\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

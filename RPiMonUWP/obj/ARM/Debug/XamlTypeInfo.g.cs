@@ -67,6 +67,18 @@ namespace RPiMonUWP.RPiMonUWP_XamlTypeInfo
             {
                 xamlType = CreateXamlType(typeIndex);
             }
+            var userXamlType = xamlType as global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlUserType;
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
+            {
+                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForType(type);
+                if (libXamlType != null)
+                {
+                    if(libXamlType.IsConstructible || xamlType == null)
+                    {
+                        xamlType = libXamlType;
+                    }
+                }
+            }
             if (xamlType != null)
             {
                 _xamlTypeCacheByName.Add(xamlType.FullName, xamlType);
@@ -90,6 +102,18 @@ namespace RPiMonUWP.RPiMonUWP_XamlTypeInfo
             if(typeIndex != -1)
             {
                 xamlType = CreateXamlType(typeIndex);
+            }
+            var userXamlType = xamlType as global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlUserType;
+            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
+            {
+                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForName(typeName);
+                if (libXamlType != null)
+                {
+                    if(libXamlType.IsConstructible || xamlType == null)
+                    {
+                        xamlType = libXamlType;
+                    }
+                }
             }
             if (xamlType != null)
             {
@@ -132,21 +156,27 @@ namespace RPiMonUWP.RPiMonUWP_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[6];
+            _typeNameTable = new string[9];
             _typeNameTable[0] = "RPiMonUWP.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "RPiMonUWP.UI.Controls.PivotHeader";
             _typeNameTable[4] = "String";
             _typeNameTable[5] = "RPiMonUWP.UI.Pages.LoginPage";
+            _typeNameTable[6] = "LiveCharts.Uwp.Points.PieSlice";
+            _typeNameTable[7] = "Windows.UI.Xaml.Shapes.Path";
+            _typeNameTable[8] = "Double";
 
-            _typeTable = new global::System.Type[6];
+            _typeTable = new global::System.Type[9];
             _typeTable[0] = typeof(global::RPiMonUWP.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::RPiMonUWP.UI.Controls.PivotHeader);
             _typeTable[4] = typeof(global::System.String);
             _typeTable[5] = typeof(global::RPiMonUWP.UI.Pages.LoginPage);
+            _typeTable[6] = typeof(global::LiveCharts.Uwp.Points.PieSlice);
+            _typeTable[7] = typeof(global::Windows.UI.Xaml.Shapes.Path);
+            _typeTable[8] = typeof(global::System.Double);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -184,6 +214,7 @@ namespace RPiMonUWP.RPiMonUWP_XamlTypeInfo
         private object Activate_0_MainPage() { return new global::RPiMonUWP.MainPage(); }
         private object Activate_3_PivotHeader() { return new global::RPiMonUWP.UI.Controls.PivotHeader(); }
         private object Activate_5_LoginPage() { return new global::RPiMonUWP.UI.Pages.LoginPage(); }
+        private object Activate_6_PieSlice() { return new global::LiveCharts.Uwp.Points.PieSlice(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -229,10 +260,92 @@ namespace RPiMonUWP.RPiMonUWP_XamlTypeInfo
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
+
+            case 6:   //  LiveCharts.Uwp.Points.PieSlice
+                userType = new global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Shapes.Path"));
+                userType.Activator = Activate_6_PieSlice;
+                userType.AddMemberName("Radius");
+                userType.AddMemberName("PushOut");
+                userType.AddMemberName("InnerRadius");
+                userType.AddMemberName("WedgeAngle");
+                userType.AddMemberName("RotationAngle");
+                userType.AddMemberName("XOffset");
+                userType.AddMemberName("YOffset");
+                userType.AddMemberName("Percentage");
+                userType.AddMemberName("PieceValue");
+                userType.SetIsBindable();
+                xamlType = userType;
+                break;
+
+            case 7:   //  Windows.UI.Xaml.Shapes.Path
+                xamlType = new global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 8:   //  Double
+                xamlType = new global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
             }
             return xamlType;
         }
 
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> _otherProviders;
+        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> OtherProviders
+        {
+            get
+            {
+                if(_otherProviders == null)
+                {
+                    var otherProviders = new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider>();
+                    global::Windows.UI.Xaml.Markup.IXamlMetadataProvider provider;
+                    provider = new global::LiveCharts.Uwp.UwpView_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    otherProviders.Add(provider); 
+                    provider = new global::MahApps.Metro.IconPacks.Core.MahApps_Metro_IconPacks_UWP_Core_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    otherProviders.Add(provider); 
+                    provider = new global::MahApps.Metro.IconPacks.Material.MahApps_Metro_IconPacks_UWP_Material_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    otherProviders.Add(provider); 
+                    _otherProviders = otherProviders;
+                }
+                return _otherProviders;
+            }
+        }
+
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForName(string typeName)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(typeName);
+                if(xamlType != null)
+                {
+                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
+                    {
+                        return xamlType;
+                    }
+                    foundXamlType = xamlType;
+                }
+            }
+            return foundXamlType;
+        }
+
+        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForType(global::System.Type type)
+        {
+            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
+            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
+            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
+            {
+                xamlType = xmp.GetXamlType(type);
+                if(xamlType != null)
+                {
+                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
+                    {
+                        return xamlType;
+                    }
+                    foundXamlType = xamlType;
+                }
+            }
+            return foundXamlType;
+        }
 
         private object get_0_PivotHeader_Glyph(object instance)
         {
@@ -253,6 +366,91 @@ namespace RPiMonUWP.RPiMonUWP_XamlTypeInfo
         {
             var that = (global::RPiMonUWP.UI.Controls.PivotHeader)instance;
             that.Label = (global::System.String)Value;
+        }
+        private object get_2_PieSlice_Radius(object instance)
+        {
+            var that = (global::LiveCharts.Uwp.Points.PieSlice)instance;
+            return that.Radius;
+        }
+        private void set_2_PieSlice_Radius(object instance, object Value)
+        {
+            var that = (global::LiveCharts.Uwp.Points.PieSlice)instance;
+            that.Radius = (global::System.Double)Value;
+        }
+        private object get_3_PieSlice_PushOut(object instance)
+        {
+            var that = (global::LiveCharts.Uwp.Points.PieSlice)instance;
+            return that.PushOut;
+        }
+        private void set_3_PieSlice_PushOut(object instance, object Value)
+        {
+            var that = (global::LiveCharts.Uwp.Points.PieSlice)instance;
+            that.PushOut = (global::System.Double)Value;
+        }
+        private object get_4_PieSlice_InnerRadius(object instance)
+        {
+            var that = (global::LiveCharts.Uwp.Points.PieSlice)instance;
+            return that.InnerRadius;
+        }
+        private void set_4_PieSlice_InnerRadius(object instance, object Value)
+        {
+            var that = (global::LiveCharts.Uwp.Points.PieSlice)instance;
+            that.InnerRadius = (global::System.Double)Value;
+        }
+        private object get_5_PieSlice_WedgeAngle(object instance)
+        {
+            var that = (global::LiveCharts.Uwp.Points.PieSlice)instance;
+            return that.WedgeAngle;
+        }
+        private void set_5_PieSlice_WedgeAngle(object instance, object Value)
+        {
+            var that = (global::LiveCharts.Uwp.Points.PieSlice)instance;
+            that.WedgeAngle = (global::System.Double)Value;
+        }
+        private object get_6_PieSlice_RotationAngle(object instance)
+        {
+            var that = (global::LiveCharts.Uwp.Points.PieSlice)instance;
+            return that.RotationAngle;
+        }
+        private void set_6_PieSlice_RotationAngle(object instance, object Value)
+        {
+            var that = (global::LiveCharts.Uwp.Points.PieSlice)instance;
+            that.RotationAngle = (global::System.Double)Value;
+        }
+        private object get_7_PieSlice_XOffset(object instance)
+        {
+            var that = (global::LiveCharts.Uwp.Points.PieSlice)instance;
+            return that.XOffset;
+        }
+        private void set_7_PieSlice_XOffset(object instance, object Value)
+        {
+            var that = (global::LiveCharts.Uwp.Points.PieSlice)instance;
+            that.XOffset = (global::System.Double)Value;
+        }
+        private object get_8_PieSlice_YOffset(object instance)
+        {
+            var that = (global::LiveCharts.Uwp.Points.PieSlice)instance;
+            return that.YOffset;
+        }
+        private void set_8_PieSlice_YOffset(object instance, object Value)
+        {
+            var that = (global::LiveCharts.Uwp.Points.PieSlice)instance;
+            that.YOffset = (global::System.Double)Value;
+        }
+        private object get_9_PieSlice_Percentage(object instance)
+        {
+            var that = (global::LiveCharts.Uwp.Points.PieSlice)instance;
+            return that.Percentage;
+        }
+        private object get_10_PieSlice_PieceValue(object instance)
+        {
+            var that = (global::LiveCharts.Uwp.Points.PieSlice)instance;
+            return that.PieceValue;
+        }
+        private void set_10_PieSlice_PieceValue(object instance, object Value)
+        {
+            var that = (global::LiveCharts.Uwp.Points.PieSlice)instance;
+            that.PieceValue = (global::System.Double)Value;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -275,6 +473,69 @@ namespace RPiMonUWP.RPiMonUWP_XamlTypeInfo
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_1_PivotHeader_Label;
                 xamlMember.Setter = set_1_PivotHeader_Label;
+                break;
+            case "LiveCharts.Uwp.Points.PieSlice.Radius":
+                userType = (global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveCharts.Uwp.Points.PieSlice");
+                xamlMember = new global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlMember(this, "Radius", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_2_PieSlice_Radius;
+                xamlMember.Setter = set_2_PieSlice_Radius;
+                break;
+            case "LiveCharts.Uwp.Points.PieSlice.PushOut":
+                userType = (global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveCharts.Uwp.Points.PieSlice");
+                xamlMember = new global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlMember(this, "PushOut", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_3_PieSlice_PushOut;
+                xamlMember.Setter = set_3_PieSlice_PushOut;
+                break;
+            case "LiveCharts.Uwp.Points.PieSlice.InnerRadius":
+                userType = (global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveCharts.Uwp.Points.PieSlice");
+                xamlMember = new global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlMember(this, "InnerRadius", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_4_PieSlice_InnerRadius;
+                xamlMember.Setter = set_4_PieSlice_InnerRadius;
+                break;
+            case "LiveCharts.Uwp.Points.PieSlice.WedgeAngle":
+                userType = (global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveCharts.Uwp.Points.PieSlice");
+                xamlMember = new global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlMember(this, "WedgeAngle", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_5_PieSlice_WedgeAngle;
+                xamlMember.Setter = set_5_PieSlice_WedgeAngle;
+                break;
+            case "LiveCharts.Uwp.Points.PieSlice.RotationAngle":
+                userType = (global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveCharts.Uwp.Points.PieSlice");
+                xamlMember = new global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlMember(this, "RotationAngle", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_6_PieSlice_RotationAngle;
+                xamlMember.Setter = set_6_PieSlice_RotationAngle;
+                break;
+            case "LiveCharts.Uwp.Points.PieSlice.XOffset":
+                userType = (global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveCharts.Uwp.Points.PieSlice");
+                xamlMember = new global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlMember(this, "XOffset", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_7_PieSlice_XOffset;
+                xamlMember.Setter = set_7_PieSlice_XOffset;
+                break;
+            case "LiveCharts.Uwp.Points.PieSlice.YOffset":
+                userType = (global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveCharts.Uwp.Points.PieSlice");
+                xamlMember = new global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlMember(this, "YOffset", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_8_PieSlice_YOffset;
+                xamlMember.Setter = set_8_PieSlice_YOffset;
+                break;
+            case "LiveCharts.Uwp.Points.PieSlice.Percentage":
+                userType = (global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveCharts.Uwp.Points.PieSlice");
+                xamlMember = new global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlMember(this, "Percentage", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_9_PieSlice_Percentage;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "LiveCharts.Uwp.Points.PieSlice.PieceValue":
+                userType = (global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlUserType)GetXamlTypeByName("LiveCharts.Uwp.Points.PieSlice");
+                xamlMember = new global::RPiMonUWP.RPiMonUWP_XamlTypeInfo.XamlMember(this, "PieceValue", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_10_PieSlice_PieceValue;
+                xamlMember.Setter = set_10_PieSlice_PieceValue;
                 break;
             }
             return xamlMember;

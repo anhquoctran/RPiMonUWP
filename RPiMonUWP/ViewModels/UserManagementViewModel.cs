@@ -61,6 +61,39 @@ namespace RPiMonUWP.ViewModels
             return models;
         }
 
-        
+        public async Task<bool> AddUser(string username, string password, string email, string phone, string fullname,
+            DateTime birthdate, bool isadmin = false)
+        {
+            bool res = false;
+            try
+            {
+                var requestUrl = BaseAPIConnectionString.AddUserUrl(_token);
+                var client = new HttpClient();
+                client.DefaultRequestHeaders.Accept.Add(new HttpMediaTypeWithQualityHeaderValue("application/json"));
+                HttpRequestMessage requestMessage = new HttpRequestMessage();
+                requestMessage.Method = HttpMethod.Post;
+                requestMessage.RequestUri = new Uri(requestUrl);
+                JObject jobjadd = new JObject(new UserModels()
+                {
+                    Fullname = fullname,
+                    Username = username,
+                    Password = password,
+                    Email = email,
+                    Phone = phone,
+                    Birthdate = birthdate,
+                    Role = isadmin
+                });
+
+                requestMessage.Content = new HttpStringContent(jobjadd.ToString(Formatting.Indented));
+                var response =  await client.SendRequestAsync(requestMessage);
+                res = response.IsSuccessStatusCode;
+
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return res;
+        }
     }
 }
