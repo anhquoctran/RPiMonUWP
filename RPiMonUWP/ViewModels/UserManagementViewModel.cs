@@ -10,6 +10,7 @@ using RPiMonUWP.BaseAPI;
 using RPiMonUWP.ObjectModels.ReferenceOjects;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using RPiMonUWP.Commons;
 
 namespace RPiMonUWP.ViewModels
 {
@@ -21,6 +22,7 @@ namespace RPiMonUWP.ViewModels
         }
 
         private static string _token;
+        private static Security sec = new Security();
 
         public async Task<UserModels> Login(string username, string password)
         {
@@ -31,6 +33,9 @@ namespace RPiMonUWP.ViewModels
                 var requestUrl = BaseAPIConnectionString.LoginUrl(_token);
                 http.DefaultRequestHeaders.Accept.Add(new HttpMediaTypeWithQualityHeaderValue("application/json"));
                 HttpRequestMessage requestMessage = new HttpRequestMessage();
+                var passwordBytes = Encoding.UTF8.GetBytes(password);
+                var encrypt = sec.Encrypt(passwordBytes);
+
                 JObject objectlogin = new JObject(new LoginObject()
                 {
                     Username = username,

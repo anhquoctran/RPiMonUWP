@@ -17,6 +17,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using RPiMonUWP.ObjectModels.ReferenceOjects;
 using RPiMonUWP.ViewModels;
+using Windows.Security.Credentials;
+using RPiMonUWP.Commons;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -28,11 +30,18 @@ namespace RPiMonUWP.UI.Pages
     public sealed partial class LoginPage : Page
 
     {
+        public static PasswordVault _Locker = new PasswordVault();
+        PasswordCredential _credential = new PasswordCredential();
 
         private string _token = "";
         public LoginPage()
         {
             this.InitializeComponent();
+            _credential.RetrievePassword();
+            if (_credential.UserName != "" || _credential.Password != "")
+            {
+                
+            }
         }
 
         private async void BtnLogin_Click(object sender, RoutedEventArgs e)
@@ -41,7 +50,6 @@ namespace RPiMonUWP.UI.Pages
             {
                 await new MessageDialog("Don't leave blank required field!").ShowAsync();
                 
-
             }
             else
             {
@@ -50,6 +58,13 @@ namespace RPiMonUWP.UI.Pages
                 {
                     ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
                     localSettings.Values["userdata"] = reslogin;
+                    _credential.Resource = "Login";
+                    _credential.Password = txtPassword.Password;
+                    _credential.UserName = txtUsername.Text;
+                    if (ChkRemember.IsChecked.Value == true)
+                    {
+                        
+                    }
                     Frame.Navigate(typeof(MainPage));
                 }
                 else
@@ -68,6 +83,11 @@ namespace RPiMonUWP.UI.Pages
             UserManagementViewModel umvm = new UserManagementViewModel(_token);
             res = await umvm.Login(username, password);
             return res;
+        }
+
+        private void LinkForgot_Click(Windows.UI.Xaml.Documents.Hyperlink sender, Windows.UI.Xaml.Documents.HyperlinkClickEventArgs args)
+        {
+            Frame.Navigate(typeof(ForgotPage));
         }
     }
 }

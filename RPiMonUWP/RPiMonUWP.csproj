@@ -96,6 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="BaseAPI\BaseAPIConnectionString.cs" />
+    <Compile Include="Commons\Security.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -123,8 +124,14 @@
     <Compile Include="UI\Controls\PivotHeader.xaml.cs">
       <DependentUpon>PivotHeader.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Pages\ForgotPage.xaml.cs">
+      <DependentUpon>ForgotPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pages\PasswordRecover.xaml.cs">
+      <DependentUpon>PasswordRecover.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\SysInfoViewModel.cs" />
     <Compile Include="ViewModels\UserManagementViewModel.cs" />
@@ -160,13 +167,20 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\Pages\ForgotPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Pages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Pages\PasswordRecover.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Commons\" />
     <Folder Include="UI\Frames\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

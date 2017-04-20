@@ -37,5 +37,10 @@ namespace RPiMonUWP
             // add you own code here
 
         }
+
+        private void btnHbg_Click(object sender, RoutedEventArgs e)
+        {
+            SplitMain.IsPaneOpen = !SplitMain.IsPaneOpen;
+        }
     }
 }

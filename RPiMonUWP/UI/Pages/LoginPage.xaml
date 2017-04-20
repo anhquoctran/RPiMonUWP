@@ -17,10 +17,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid x:Name="GridLogo" Grid.Row="0">
-            <Image
-                x:Name="ImgLogo"
-                Source="ms-appx:///Assets/RPiMonSys.png"
-                Stretch="UniformToFill" />
+            <Image x:Name="ImgLogo" Source="ms-appx:///Assets/RPiMonSys.png" />
         </Grid>
         <Grid x:Name="GridFormLogin" Grid.Row="1">
             <TextBlock
@@ -52,7 +49,7 @@
                 Margin="10,180,10,0"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Top"
-                Content="Ghi nhớ đăng nhập" />
+                Content="Remember this credential" />
             <Button
                 x:Name="BtnLogin"
                 Height="41"
@@ -61,16 +58,22 @@
                 VerticalAlignment="Top"
                 Background="{StaticResource DefaultAccentColor}"
                 Click="BtnLogin_Click"
-                Content="Đăng nhập" />
+                Content="Login" />
             <TextBlock
                 x:Name="TxtForgotLink"
                 Margin="10,430,10,10"
                 HorizontalAlignment="Center"
                 Foreground="White"
-                Text="Lấy mật khẩu"
                 TextTrimming="CharacterEllipsis"
-                TextWrapping="Wrap" />
-
+                TextWrapping="Wrap">
+                <Hyperlink
+                    x:Name="LinkForgot"
+                    Click="LinkForgot_Click"
+                    Foreground="White"
+                    NavigateUri="ForgotPage.xaml">
+                    Forgot password? Recover here
+                </Hyperlink>
+            </TextBlock>
         </Grid>
     </Grid>
 </Page>

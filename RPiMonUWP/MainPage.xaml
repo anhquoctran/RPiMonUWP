@@ -10,8 +10,16 @@
     mc:Ignorable="d">
 
     <StackPanel>
-        <Grid Height="40" Background="#FFEEEEF2" />
+        <Grid Height="40" Background="#FFEEEEF2">
+            <Button
+                x:Name="btnHbg"
+                Height="Auto"
+                VerticalAlignment="Stretch"
+                Click="btnHbg_Click"
+                Style="{StaticResource HamburgerButtonStyle}" />
+        </Grid>
         <SplitView
+            x:Name="SplitMain"
             Height="600"
             CompactPaneLength="45"
             DisplayMode="Inline"
