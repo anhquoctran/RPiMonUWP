@@ -30,17 +30,20 @@ namespace RPiMonUWP.ViewModels
             try
             {
                 var http = new HttpClient();
-                var requestUrl = BaseAPIConnectionString.LoginUrl(_token);
+                var requestUrl = BaseAPIConnectionString.LoginUrl();
                 http.DefaultRequestHeaders.Accept.Add(new HttpMediaTypeWithQualityHeaderValue("application/json"));
                 HttpRequestMessage requestMessage = new HttpRequestMessage();
+
                 var passwordBytes = Encoding.UTF8.GetBytes(password);
                 var encrypt = sec.Encrypt(passwordBytes);
+                var a = Encoding.UTF8.GetString(encrypt);
 
                 JObject objectlogin = new JObject(new LoginObject()
                 {
                     Username = username,
-                    Password = password
+                    Password = a
                 });
+
                 requestMessage.Content = new HttpStringContent(objectlogin.ToString(Formatting.Indented));
                 requestMessage.Method = HttpMethod.Post;
                 requestMessage.RequestUri = new Uri(requestUrl);
@@ -51,7 +54,8 @@ namespace RPiMonUWP.ViewModels
                 {
                     
                     var content = await response.Content.ReadAsStringAsync();
-                    models = JsonConvert.DeserializeObject<UserModels>(content);
+                    var root = JsonConvert.DeserializeObject<RootUserModels>(content);
+                    models = root.UserInfo[0];
                 }
                 else
                 {
@@ -99,6 +103,87 @@ namespace RPiMonUWP.ViewModels
                 throw new Exception(e.Message);
             }
             return res;
+        }
+
+        public async Task<bool> DeleleUser(string username)
+        {
+            bool res;
+            try
+            {
+                var requestUrl = BaseAPIConnectionString.DeleteUserUrl(_token);
+                var client = new HttpClient();
+                client.DefaultRequestHeaders.Accept.Add(new HttpMediaTypeWithQualityHeaderValue("application/json"));
+                var response = await client.SendRequestAsync(new HttpRequestMessage()
+                {
+                    Method = HttpMethod.Delete,
+                    RequestUri = new Uri(requestUrl),
+                    Content = new HttpStringContent(new JObject(new UserModels()
+                    {
+                        Username = username
+                    }).ToString(Formatting.Indented))
+                });
+                res = response.IsSuccessStatusCode;
+
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return res;
+        }
+
+        public async Task<bool> UpdateUser(string username, string fullname, DateTime birthdate, string phone,
+            string email)
+        {
+            bool res;
+            try
+            {
+                var requestUrl = BaseAPIConnectionString.UpdateUserUrl(_token);
+                var client = new HttpClient();
+                client.DefaultRequestHeaders.Accept.Add(new HttpMediaTypeWithQualityHeaderValue("application/json"));
+                var response = await client.SendRequestAsync(new HttpRequestMessage()
+                {
+                    Method = HttpMethod.Put,
+                    RequestUri = new Uri(requestUrl),
+                    Content = new HttpStringContent(new JObject(new UserModels()
+                    {
+                        Username = username,
+                        Fullname = fullname,
+                        Phone = phone,
+                        Birthdate = birthdate,
+                        Email = email,
+                    }).ToString(Formatting.Indented))
+                });
+                res = response.IsSuccessStatusCode;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return res;
+        }
+
+        public async Task<List<UserModels>> FetchAllUserAvailable()
+        {
+            var lst = new List<UserModels>();
+            try
+            {
+                var requestUrl = BaseAPIConnectionString.FetchAllUserConnUrl(_token);
+                var client = new HttpClient();
+                client.DefaultRequestHeaders.Accept.Add(new HttpMediaTypeWithQualityHeaderValue("application/json"));
+                var response = await client.GetAsync(new Uri(requestUrl));
+                if (response.IsSuccessStatusCode)
+                {
+                    var rs = response.Content.ReadAsStringAsync();
+                    var deserialize = JsonConvert.DeserializeObject<RootUserModels>(rs.GetResults());
+                    lst = deserialize.UserInfo;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return lst;
         }
     }
 }

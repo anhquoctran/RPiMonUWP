@@ -34,6 +34,6 @@ namespace RPiMonUWP.ObjectModels.ReferenceOjects
         [JsonProperty("message")]
         public string Message { get; set; }
         [JsonProperty("data")]
-        public UserModels UserInfo { get; set; }
+        public List<UserModels> UserInfo { get; set; }
     }
 }

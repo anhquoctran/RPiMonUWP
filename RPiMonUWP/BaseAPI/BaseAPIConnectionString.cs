@@ -22,9 +22,9 @@ namespace RPiMonUWP.BaseAPI
             return $"{Host}:{Port}/api/oauth/user/fetch?access_token={token}&username={username}";
         }
 
-        public static string LoginUrl(string token)
+        public static string LoginUrl()
         {
-            return $"{Host}:{Port}/api/oauth/user/login?access_token={token}";
+            return $"{Host}:{Port}/api/oauth/user/login";
         }
 
         public static string UpdateUserUrl(string token)
